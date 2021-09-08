@@ -1,0 +1,43 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 223, 223);
+    padding: 20%, 5%;
+}
+.container{
+    width: 25%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+}
+
+.auth_inputs{
+    border-block-color: gray;
+    padding: 8px;
+    font-size: 16px;
+    width: 85%;
+}
+.login_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    background-color: dodgerblue;
+    padding: 8px 12px;
+    width: calc(85% + 16px);
+}
+.auth_info_container{
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
