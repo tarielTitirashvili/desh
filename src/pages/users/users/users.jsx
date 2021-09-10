@@ -27,7 +27,9 @@ export default function Users (props) {
                     </div>
                 </div>
                 <div>
-                    <UsersTotalInfo/>
+                    <UsersTotalInfo
+                        users = {props.users}
+                    />
                 </div>
             </div>
         </div>
