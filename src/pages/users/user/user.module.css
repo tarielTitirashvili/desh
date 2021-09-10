@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.user_id{
+    width: 15%;
+    padding-left: 44px;
+}
+.user_infos{
+    width: 15%;
+}
+.active_button{
+    color: green;
+    border-color: green;
+    border-radius: 15px;
+}
+.additional_info{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+}
+.additional_info_title{
+    font-weight: 600;
+    font-size: 20px;
+}

@@ -13,4 +13,13 @@
     background-color: darkorange;
     color: darkslategray;
     font-weight: 800;
+    padding: 17px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: lavenderblush;
+    font-weight: 600;
+    width: 30%;
 }

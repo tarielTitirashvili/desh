@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter , Route} from 'react-router-dom'
 import { Redirect } from 'react-router'
 import { authAC, checkAuthThunk, emailAC } from './store/reducers/authReducer'

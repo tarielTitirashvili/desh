@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
     return {
         auth: state.authReducer.auth,
         email: state.authReducer.email,
+        wrongInfo: state.authReducer.wrongInfo
     }
 }
 const mapDispatchToProps = (dispatch) => {
