@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom"
 import css from './pagination.module.css'
 
 export default function Pagination(props) {
-    console.log(props.currentPage)
     
     return(
         <div>
