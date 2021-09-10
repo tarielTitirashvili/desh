@@ -42,12 +42,15 @@ export default function Auth (props) {
         props.CheckLoginInfoAC(email, pass)
         
     }
+    function handleSubmit(event) {
+        event.preventDefault();
+      }
     
     return(
         <div style = {{height: window.innerHeight}} className = {css.wrapper}>
-             <firm className = {css.container} >
+             <form  onSubmit={handleSubmit} className = {css.container}  >
                  <div className = {css.auth_info_container}>
-                     <label for = "email" ></label>
+                     <label htmlFor = "email" ></label>
                     <input required id = "email" className = {css.auth_inputs} onChange = {(e)=> {
                         setEmail(e.target.value)
                         validation(e.target.value)
@@ -63,7 +66,8 @@ export default function Auth (props) {
                             please enter your email Address.
                         </div>:""
                     }
-                    <input required className =  {css.auth_inputs} onChange = {(e)=> {
+                    <label htmlFor = "password" ></label>
+                    <input name = "password" required className =  {css.auth_inputs} onChange = {(e)=> {
                         requiredValidator(e.target.value)
                         setPass(e.target.value)}
                 } type="password" placeholder = "enter your password" value = {pass}/>
@@ -77,7 +81,7 @@ export default function Auth (props) {
                     <button onClick = {()=>onsubmit(email,pass)} className = {css.login} > Login </button>
                 </div>
                 {props.wrongInfo? <div className ={css.error_massage} > email or password is wrong </div>:"" }
-            </firm>
+            </form>
         </div>
     )
 }
