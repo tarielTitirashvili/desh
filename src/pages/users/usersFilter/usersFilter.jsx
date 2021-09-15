@@ -8,6 +8,7 @@ export default function UsersFilter(props) {
     
     return(
         <div className = {css.container}>
+            Filter
             <div className = {css.account_id} >
                 <div onClick = {() => setSeeFilterInput(!seeFilterInput)} >
                     AccountID
