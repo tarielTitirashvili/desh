@@ -1,15 +1,15 @@
 import React from "react"
 import css  from './users.module.css'
 import Header from '../../../components/header/header'
-import User from "../usersNav/usersNav"
 import UsersTotalInfo from "../usersTotalInfo/usersTotalInfo"
+import UsersNav from "../usersNav/usersNav"
 
 export default function Users (props) {
     
     return(
         <div>
-            <Header 
-                logOutThunk = {props.logOutThunk} 
+            <Header
+                logOutThunk = {props.logOutThunk}
                 email = {props.email}
             />
             <div className = {css.desh_container}>
@@ -17,12 +17,14 @@ export default function Users (props) {
                 </div>
                 <div className = {css.users_container}>
                     <div className = {css.user_Container}>
-                        <User 
+                        <UsersNav 
                             getUsersThunk = {props.getUsersThunk}
                             users = {props.users} 
                             currentPage = {props.currentPage}
                             currentPageAC = {props.currentPageAC}
                             totalPages = {props.totalPages}
+                            accountIdAC = {props.accountIdAC}
+                            AccountID = {props.AccountID}
                         />
                     </div>
                 </div>

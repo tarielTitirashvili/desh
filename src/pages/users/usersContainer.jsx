@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { currentPageAC, getUsersThunk } from '../../store/reducers/usersReducer'
+import { currentPageAC, getUsersThunk, accountIdAC } from '../../store/reducers/usersReducer'
 import { checkAuthThunk, logOutThunk } from '../../store/reducers/authReducer'
 import Users from './users/users'
 
@@ -21,6 +21,8 @@ export function UsersContainer (props) {
           totalPages = {props.totalPages}
           logOutThunk = {props.logOutThunk}
           currentPageAC = {props.currentPageAC}
+          AccountID = {props.AccountID}
+          accountIdAC = {props.accountIdAC}
         /> </>
     )
 }
@@ -31,6 +33,7 @@ const mapStateToProps = (state) => {
         users: state.usersReducer.users,
         totalPages: state.usersReducer.totalPages,
         currentPage: state.usersReducer.currentPage,
+        AccountID: state.usersReducer.AccountID
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -43,6 +46,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(currentPageAC(page))
         },checkAuthThunk(){
             dispatch(checkAuthThunk())
+        },accountIdAC(accountID){
+            dispatch(accountIdAC(accountID))
         }
         
     }

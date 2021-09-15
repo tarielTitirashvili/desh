@@ -3,11 +3,13 @@ import { getUsersAPI } from "../../API/API"
 const USERSARRAY = "USERSARRAY"
 const TOTALPAGESTAKER = "TOTALPAGESTAKER"
 const SETCURRENTPAGE = "SETCURRENTPAGESETCURRENTPAGE"
+const SERACCOUNTID = "SETACCOUNTID"
 
 let initialState = {
   users:[],
   totalPages:0,
-  currentPage:1
+  currentPage:1,
+  AccountID : null,
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -27,6 +29,11 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         currentPage: action.page
       }
+    case SERACCOUNTID:
+      return{
+        ...state,
+        AccountID: action.accountID
+      }
     default: return state
   }
 }
@@ -37,7 +44,9 @@ export const totalPagesAC = (pages) =>({ type: TOTALPAGESTAKER, pages })
 
 export const currentPageAC = (page) =>({ type: SETCURRENTPAGE, page })
 
-export const getUsersThunk = (page) => {
+export const accountIdAC = (accountID) =>({ type: SERACCOUNTID, accountID })
+
+export const getUsersThunk = ( page) => {
     return (dispatch) =>{        
         getUsersAPI(page).then((data)=>{
             dispatch(usersAC(data.data.content))

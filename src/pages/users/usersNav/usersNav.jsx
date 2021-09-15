@@ -2,11 +2,19 @@ import React from "react"
 import Pagination from "../../../components/pagination/pagination"
 import User from "../user/user"
 import css from './usersNav.module.css'
+import UsersFilter from "../usersFilter/usersFilter"
 
 export default function UsersNav(props) {
 
     return(
         <div>
+            <div className = {css.nav}>
+                <UsersFilter
+                  getUsersThunk = {props.getUsersThunk}
+                  AccountID = {props.AccountID}
+                  accountIdAC = {props.accountIdAC}
+                />
+            </div>
             <div className = {css.nav}>
                 <div className = {css.Account_id}>
                     AccountID
