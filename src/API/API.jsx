@@ -35,8 +35,8 @@ export const getUsersInfoAPI = async (token = localStorage.getItem("access_token
     )
 }
 
-export const getUsersAPI = async (page = 1, AccountID=null,  token = localStorage.getItem("access_token"))=>{
-    return await instance.get(`api/s/admin/accounts/search?${AccountID?`accountId=${AccountID}`: '' }&size=20&page=${page-1}`
+export const getUsersAPI = async (page = 1, AccountID, email, name, token = localStorage.getItem("access_token"))=>{
+    return await instance.get(`api/s/admin/accounts/search?${AccountID?`accountId=${AccountID}&`: '' }${email?`email=${email}&`:''}${name?`name=${name}&`:''}size=20&page=${page-1}`
     , {
         headers: {
             'Authorization': `bearer ${token}`

@@ -46,9 +46,9 @@ export const currentPageAC = (page) =>({ type: SETCURRENTPAGE, page })
 
 export const accountIdAC = (accountID) =>({ type: SERACCOUNTID, accountID })
 
-export const getUsersThunk = (page,AccountID,  ) => {
+export const getUsersThunk = (page,AccountID, email, name ) => {
     return (dispatch) =>{        
-        getUsersAPI(page, AccountID,).then((data)=>{
+        getUsersAPI(page, AccountID, email, name).then((data)=>{
             dispatch(usersAC(data.data.content))
             dispatch(totalPagesAC(data.data.totalPages))
             dispatch(currentPageAC(data.data.pageable.pageNumber+1))

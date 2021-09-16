@@ -38,8 +38,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        getUsersThunk(page, AccountID) {
-            dispatch(getUsersThunk(page, AccountID))
+        getUsersThunk(page, AccountID, email, name) {
+            dispatch(getUsersThunk(page, AccountID, email, name))
         },logOutThunk(){
             dispatch(logOutThunk())
         }, currentPageAC(page){

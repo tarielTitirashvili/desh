@@ -8,7 +8,7 @@ export default function UsersNav(props) {
 
     return(
         <div>
-            <div className = {css.nav}>
+            <div>
                 <UsersFilter
                   getUsersThunk = {props.getUsersThunk}
                   AccountID = {props.AccountID}
