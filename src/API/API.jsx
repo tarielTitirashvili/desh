@@ -35,7 +35,7 @@ export const getUsersInfoAPI = async (token = localStorage.getItem("access_token
     )
 }
 
-export const getUsersAPI = async (AccountID = null ,page = 1, token = localStorage.getItem("access_token"))=>{
+export const getUsersAPI = async (page = 1, AccountID=null,  token = localStorage.getItem("access_token"))=>{
     return await instance.get(`api/s/admin/accounts/search?${AccountID?`accountId=${AccountID}`: '' }&size=20&page=${page-1}`
     , {
         headers: {
